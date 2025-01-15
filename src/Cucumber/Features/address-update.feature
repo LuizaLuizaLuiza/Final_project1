@@ -7,8 +7,10 @@ Feature: Change user address
     And I enter "<alias>" alias "<address>" address "<city>" city "<postalCode>" postalCode "<phone>" phone
     And I save all data
     Then I can see success message "Address successfully added!"
+    And I delete new address
+    And I can see delete success message "Address successfully deleted!"
     And close browser
 
     Examples:
       | alias  | address    | city      | postalCode | phone     |
-      | Mak    | New Street | Liverpool | CH415LH    | 541123321 |
+      | Mak    | Old Street | Liverpool | CH415LH    | 521123321 |

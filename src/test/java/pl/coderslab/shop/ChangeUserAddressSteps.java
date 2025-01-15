@@ -57,10 +57,21 @@ public class ChangeUserAddressSteps {
         Assert.assertEquals(message, userAddressPage.getUpdateInformation());
     }
 
+    @And("^I delete new address$")
+    public void IDeleteNewAddress() {
+        userAddressPage.deleteAddress();
+    }
+
+    @And("^I can see delete success message \"([^\"]*)\"$")
+    public void ICanSeeDeleteSuccessMessage(String deleteMessage) {
+        Assert.assertEquals(deleteMessage, userAddressPage.getDeleteSuccessInformation());
+    }
+
     @And("^close browser$")
     public void closeBrowser() {
         driver.quit();
     }
+
 }
 
 

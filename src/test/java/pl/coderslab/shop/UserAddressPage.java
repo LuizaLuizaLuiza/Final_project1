@@ -79,4 +79,17 @@ public class UserAddressPage {
         return successInformation.getText();
     }
 
+    @FindBy(xpath = "(//a[@data-link-action='delete-address'])[2]")
+    WebElement deleteAddressButton;
+
+    public void deleteAddress() {
+        deleteAddressButton.click();
+    }
+
+    @FindBy(id = "notifications")
+    WebElement deleteSuccessInformation;
+
+    public String getDeleteSuccessInformation() {
+        return deleteSuccessInformation.getText();
+    }
 }
